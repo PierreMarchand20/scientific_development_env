@@ -5,6 +5,7 @@ WORKDIR /root
 # opencascade
 RUN  apt-get update \
     && apt-get install -y --no-install-recommends \
+        ca-certificates \
         cmake \
         g++ gcc\
         gfortran \
@@ -50,7 +51,6 @@ RUN  git clone https://gitlab.onelab.info/gmsh/gmsh.git \
 # Python, clang and some utility packages
 RUN apt-get update \
     && apt-get install -y  --no-install-recommends \
-        ca-certificates \
         wget \
         ssh \
         libssl-dev \
