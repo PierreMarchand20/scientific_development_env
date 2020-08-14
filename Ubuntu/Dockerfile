@@ -52,7 +52,7 @@ RUN  git clone https://gitlab.onelab.info/gmsh/gmsh.git \
 
 # Python, clang and some utility packages
 RUN apt-get update \
-    && apt-get install -y  --no-install-recommends \
+    && apt-get install -y --no-install-recommends \
         wget \
         ssh \
         libssl-dev \
