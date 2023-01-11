@@ -31,7 +31,7 @@ jobs:
       - name: Build and push ${{ matrix.name }}
         uses: docker/build-push-action@v3
         with:
-          context: "{{defaultContext}}:${{ matrix.os }}"
+          context: "./${{ matrix.os }}"
           push: true
           target: ${{ matrix.os }}_${{ matrix.cc }}_${{ matrix.mpi }}
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/scientific_development_env:${{ matrix.os }}_${{ matrix.cc }}_${{ matrix.mpi }}
