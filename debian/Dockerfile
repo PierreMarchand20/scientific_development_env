@@ -7,7 +7,7 @@ RUN  apt-get update \
     && apt-get install -y --no-install-recommends \
     gdb valgrind yadm zsh fonts-powerline \
     && rm -rf /var/lib/apt/lists/* \
-    && chsh -s $(which zsh)
+    && chsh -s $(which zsh) mpi
 
 WORKDIR /home/mpi
 USER mpi
@@ -22,7 +22,7 @@ RUN  apt-get update \
     && apt-get install -y --no-install-recommends \
     gdb valgrind yadm zsh fonts-powerline \
     && rm -rf /var/lib/apt/lists/* \
-    && chsh -s $(which zsh)
+    && chsh -s $(which zsh) mpi
 
 WORKDIR /home/mpi
 USER mpi
@@ -37,7 +37,7 @@ RUN  apt-get update \
     && apt-get install -y --no-install-recommends \
     gdb valgrind yadm zsh fonts-powerline \
     && rm -rf /var/lib/apt/lists/* \
-    && chsh -s $(which zsh)
+    && chsh -s $(which zsh) mpi
 
 WORKDIR /home/mpi
 USER mpi
@@ -52,7 +52,7 @@ RUN  apt-get update \
     && apt-get install -y --no-install-recommends \
     lldb valgrind yadm zsh fonts-powerline \
     && rm -rf /var/lib/apt/lists/* \
-    && chsh -s $(which zsh)
+    && chsh -s $(which zsh) mpi
 
 WORKDIR /home/mpi
 USER mpi
