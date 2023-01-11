@@ -5,8 +5,9 @@ USER root
 
 RUN  apt-get update \
     && apt-get install -y --no-install-recommends \
-    gdb yadm \
-    && rm -rf /var/lib/apt/lists/*
+    gdb valgrind yadm zsh fonts-powerline \
+    && rm -rf /var/lib/apt/lists/* \
+    && chsh -s $(which zsh)
 
 WORKDIR /home/mpi
 USER mpi
@@ -19,8 +20,9 @@ USER root
 # opencascade
 RUN  apt-get update \
     && apt-get install -y --no-install-recommends \
-    gdb yadm \
-    && rm -rf /var/lib/apt/lists/*
+    gdb valgrind yadm zsh fonts-powerline \
+    && rm -rf /var/lib/apt/lists/* \
+    && chsh -s $(which zsh)
 
 WORKDIR /home/mpi
 USER mpi
@@ -33,8 +35,9 @@ USER root
 # opencascade
 RUN  apt-get update \
     && apt-get install -y --no-install-recommends \
-    gdb yadm \
-    && rm -rf /var/lib/apt/lists/*
+    gdb valgrind yadm zsh fonts-powerline \
+    && rm -rf /var/lib/apt/lists/* \
+    && chsh -s $(which zsh)
 
 WORKDIR /home/mpi
 USER mpi
@@ -47,8 +50,9 @@ USER root
 # opencascade
 RUN  apt-get update \
     && apt-get install -y --no-install-recommends \
-    lldb yadm \
-    && rm -rf /var/lib/apt/lists/*
+    lldb valgrind yadm zsh fonts-powerline \
+    && rm -rf /var/lib/apt/lists/* \
+    && chsh -s $(which zsh)
 
 WORKDIR /home/mpi
 USER mpi
