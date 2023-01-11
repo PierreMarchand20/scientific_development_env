@@ -31,8 +31,8 @@ jobs:
       - name: Build and push ${{ matrix.name }}
         uses: docker/build-push-action@v3
         with:
+          context: "{{defaultContext}}:${{ matrix.os }}"
           push: true
-          file: ./${{ matrix.os }}/Dockerfile
           target: ${{ matrix.os }}_${{ matrix.cc }}_${{ matrix.mpi }}
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/scientific_development_env:${{ matrix.os }}_${{ matrix.cc }}_${{ matrix.mpi }}
           cache-from: ${{ secrets.DOCKERHUB_USERNAME }}/scientific_development_env:${{ matrix.os }}_${{ matrix.cc }}_${{ matrix.mpi }}
