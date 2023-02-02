@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[main skip]')"
     steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
@@ -33,6 +36,9 @@ jobs:
         with:
           context: "{{defaultContext}}:${{ matrix.os }}"
           push: true
+          platforms: |-
+            linux/amd64
+            linux/arm64
           target: ${{ matrix.os }}_${{ matrix.cc }}_${{ matrix.mpi }}
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/scientific_development_env:${{ matrix.os }}_${{ matrix.cc }}_${{ matrix.mpi }}
           cache-from: ${{ secrets.DOCKERHUB_USERNAME }}/scientific_development_env:${{ matrix.os }}_${{ matrix.cc }}_${{ matrix.mpi }}
